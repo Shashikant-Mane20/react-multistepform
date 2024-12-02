@@ -7,14 +7,14 @@ const Profile = ({ updateAvatar }) => {
     localStorage.getItem("avatar") || "https://avatarfiles.alphacoders.com/161/161002.jpg"
   );
   const [modalOpen, setModalOpen] = useState(false);
-  const [previewOpen, setPreviewOpen] = useState(false); // State to track image preview modal
+  const [previewOpen, setPreviewOpen] = useState(false); 
   const [avatar, setAvatar] = useState(avatarUrl.current);
 
   const handleUpdateAvatar = (imgSrc) => {
     avatarUrl.current = imgSrc;
     setAvatar(imgSrc);
     localStorage.setItem("avatar", imgSrc);
-    if (updateAvatar) updateAvatar(imgSrc); // Call parent updateAvatar if passed
+    if (updateAvatar) updateAvatar(imgSrc); 
   };
 
   useEffect(() => {
@@ -41,8 +41,8 @@ const Profile = ({ updateAvatar }) => {
           <BiPencil />
         </button>
       </div>
-      <h2 className="text-white font-bold mt-6">Shashikant Mane</h2>
-      <p className="text-gray-500 text-xs mt-2">FullStack Developer</p>
+      {/* <h2 className="text-white font-bold mt-6">Shashikant Mane</h2>
+      <p className="text-gray-500 text-xs mt-2">FullStack Developer</p> */}
 
       {/* Profile Picture Upload Modal */}
       {modalOpen && (
